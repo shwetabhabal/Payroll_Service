@@ -26,3 +26,13 @@ where name='ravi' or name = 'om' or name='jay' or name='prakash' or name='raj';
 set sql_safe_updates = 0;
 update employee_payroll set gender ='F' where name='diva';
 select * from employee_payroll;
+insert into employee_payroll values
+(7,'rita',6000,'2023-05-01','F'),
+(8,'ruchi',6000,'2020-06-01','F')
+;
+select sum(salary) from employee_payroll where gender = 'F' group by gender;
+select avg(salary) from employee_payroll where gender = 'M' group by gender;
+select min(salary) from employee_payroll where gender = 'M' group by gender;
+select max(salary) from employee_payroll where gender ='F';
+select count(name) from employee_payroll where gender = 'F' group by gender;
+select gender, count(name) from employee_payroll group by gender;
