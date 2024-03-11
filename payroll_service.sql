@@ -12,3 +12,4 @@ insert into employee_payroll values
 insert into employee_payroll values
 (2,"om",6000,22-1-2024),
 (3,"prakash",7000,24-1-2024);
+select * from employee_payroll;
