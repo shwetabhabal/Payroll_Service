@@ -52,3 +52,34 @@ insert into employee_payroll
 values
 ('Teresa', '2019-01-03', 'F', 300000, 100000, 200000, 500000, 1500000, 'Marketting');
 update employee_payroll set name='Terisa' where id=10;
+create table salary (
+id int,
+foreign key (id) references employee(id), 
+basic_pay int , 
+deduction int , 
+taxable_pay int, 
+income_tax int ,
+net_pay int
+);
+create table employee(
+id int primary key,
+name varchar(30),
+startdate date,
+gender char(1),
+address varchar(30),
+phone int,
+department varchar(30)
+);
+INSERT INTO employee (id, name, startdate, gender, address, phone, department) VALUES
+(1, 'John Doe', '2020-01-15', 'M', '123 Main St', 1234567890, 'HR'),
+(2, 'Jane Smith', '2019-11-20', 'F', '456 Elm St', 9876543210, 'Finance'),
+(3, 'Michael Johnson', '2021-03-10', 'M', '789 Oak St', 1357924680, 'IT'),
+(4, 'Emily Davis', '2018-05-25', 'F', '101 Maple St', 2468013579, 'Marketing'),
+(5, 'Robert Brown', '2022-09-05', 'M', '222 Pine St', 3698521470, 'Sales');
+select * from employee;
+ INSERT INTO salary (id, basic_pay, deduction, taxable_pay, income_tax, net_pay) VALUES
+(1, 50000, 10000, 40000, 8000, 32000),
+(2, 60000, 12000, 48000, 9600, 38400),
+(3, 70000, 14000, 56000, 11200, 44800),
+(4, 55000, 11000, 44000, 8800, 35200),
+(5, 65000, 13000, 52000, 10400, 41600);
