@@ -39,10 +39,16 @@ select gender, count(name) from employee_payroll group by gender;
 
 alter table employee_payroll add column phone int ;
 alter table employee_payroll add column address varchar(50) default 'Mumbai';
-alter table employee_payroll add column department int not null;
+alter table employee_payroll add column department varchar(50) not null;
 alter table employee_payroll add column basic_pay int;
 alter table employee_payroll add column deduction int;
 alter table employee_payroll add column taxable_pay int;
 alter table employee_payroll add column income_tax int;
 alter table employee_payroll add column net_pay int;
 select * from employee_payroll;
+alter table employee_payroll drop column salary;
+insert into employee_payroll 
+(name, startdate, gender, basic_pay,deduction, taxable_pay, income_tax,	net_pay, department)
+values
+('Teresa', '2019-01-03', 'F', 300000, 100000, 200000, 500000, 1500000, 'Marketting');
+update employee_payroll set name='Terisa' where id=10;
