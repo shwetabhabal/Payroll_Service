@@ -83,3 +83,40 @@ select * from employee;
 (3, 70000, 14000, 56000, 11200, 44800),
 (4, 55000, 11000, 44000, 8800, 35200),
 (5, 65000, 13000, 52000, 10400, 41600);
+select sum(salary.basic_pay) as total_salary_female
+from employee 
+inner join salary
+on employee.id = salary.id
+where gender = 'F';
+
+select sum(salary.basic_pay) as total_salary_male
+from employee
+inner join salary
+on employee.id = salary.id
+where gender = 'M';
+
+select avg(salary.basic_pay) as avg_salary
+from employee
+inner join salary
+on employee.id = salary.id
+where gender = 'F';
+
+select min(salary.basic_pay) 
+from employee
+inner join salary
+on employee.id = salary.id
+where gender = 'F';
+
+select max(salary.basic_pay)
+from employee
+inner join salary
+on employee.id = salary.id
+where gender = 'F';
+
+select gender, count(name)
+from employee
+where gender = 'F';
+
+select gender, count(name)
+from employee
+where gender = 'M';
