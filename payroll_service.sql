@@ -36,3 +36,8 @@ select min(salary) from employee_payroll where gender = 'M' group by gender;
 select max(salary) from employee_payroll where gender ='F';
 select count(name) from employee_payroll where gender = 'F' group by gender;
 select gender, count(name) from employee_payroll group by gender;
+
+alter table employee_payroll add column phone int ;
+alter table employee_payroll add column address varchar(50) default 'Mumbai';
+alter table employee_payroll add column department int not null;
+select * from employee_payroll;
